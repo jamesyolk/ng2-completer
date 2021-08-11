@@ -52,8 +52,9 @@ export class RemoteData extends CompleterBaseData {
             .get(url, Object.assign({}, this._requestOptions))
             .pipe(
                 map((data: any) => {
-                    const matches = this.extractValue(data, this._dataField);
-                    return this.extractMatches(matches, term);
+                    // const matches = this.extractValue(data, this._dataField);
+                    // return this.extractMatches(matches, term);
+                    return data;
                 }),
                 catchError(() => [])
             )
